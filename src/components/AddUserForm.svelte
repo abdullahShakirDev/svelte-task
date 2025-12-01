@@ -108,45 +108,49 @@
 
 				<div class="grid gap-2">
 					<Label for="profilePic">Profile Picture</Label>
-					<Input
+					<div class="flex flex-col items-center gap-2">
+						<Input
 						id="profilePic"
 						name="profilePic"
 						type="file"
 						accept="image/*"
 						onchange={(e) => handleFileChange(e, 'image')}
-					/>
+						/>
 					{#if imgPreview}
-						<div class="mt-2">
+					<div class="mt-2">
 							<img
-								src={imgPreview}
-								alt="Profile preview"
-								class="h-32 w-32 rounded-lg border object-cover shadow-sm"
+							src={imgPreview}
+							alt="Profile preview"
+							class="h-32 w-32 rounded-lg border object-cover shadow-sm"
 							/>
 						</div>
-					{/if}
+						{/if}
+					</div>
 				</div>
 
 				<!-- Bio Video Input + Preview -->
 				<div class="grid gap-2">
 					<Label for="bioVideo">Bio Video</Label>
-					<Input
+					<div class="flex flex-col items-center gap-2">
+						<Input
 						id="bioVideo"
 						name="bioVideo"
 						type="file"
 						accept="video/*"
 						onchange={(e) => handleFileChange(e, 'video')}
-					/>
-					{#if videoPreview}
+						/>
+						{#if videoPreview}
 						<div class="mt-2">
 							<!-- svelte-ignore a11y_media_has_caption -->
 							<video
-								src={videoPreview}
-								controls
-								class="aspect-video w-full rounded-lg border shadow-sm"
+							src={videoPreview}
+							controls
+							class="aspect-video w-full rounded-lg border shadow-sm"
 							>
-							</video>
-						</div>
+						</video>
+					</div>
 					{/if}
+				</div>
 				</div>
 			</div>
 
